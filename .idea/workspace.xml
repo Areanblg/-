@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37dcb969-6730-4b65-9da1-df3925a8d3fd" name="变更" comment="" />
+    <list default="true" id="37dcb969-6730-4b65-9da1-df3925a8d3fd" name="变更" comment="takeout1.0" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -155,8 +155,16 @@
       <workItem from="1679799200822" duration="604000" />
       <workItem from="1679824477604" duration="16000" />
       <workItem from="1679916274229" duration="1273000" />
-      <workItem from="1679924814359" duration="10407000" />
+      <workItem from="1679924814359" duration="10778000" />
     </task>
+    <task id="LOCAL-00001" summary="takeout1.0">
+      <created>1680008622007</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680008622007</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,11 +175,47 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="takeout1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="takeout1.0" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
