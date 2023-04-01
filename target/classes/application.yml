@@ -11,6 +11,11 @@ spring:
       url: jdbc:mysql://localhost:3306/takeout?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
       username: root
       password: root
+  redis:
+    host: 192.168.111.130
+    port: 6379
+    password: 123321
+    database: 1
 mybatis-plus:
   configuration:
     #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
@@ -20,6 +25,7 @@ mybatis-plus:
     db-config:
       id-type: ASSIGN_ID #雪花算法id生成
 
+#redis
 image:
   path: D:\code\img\
 

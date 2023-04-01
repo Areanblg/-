@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37dcb969-6730-4b65-9da1-df3925a8d3fd" name="变更" comment="takeout1.0">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/config/RedisConfig.java" afterDir="false" />
+    <list default="true" id="37dcb969-6730-4b65-9da1-df3925a8d3fd" name="变更" comment="Redis环境配置">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/controller/DishController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/service/impl/DishServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/service/impl/DishServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/DishController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/DishController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aearn/takeout/service/impl/DishServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aearn/takeout/service/impl/DishServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680008696968</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Redis环境配置">
+      <created>1680277786948</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680277786948</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +243,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="takeout1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="takeout1.0" />
+    <MESSAGE value="Redis环境配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="Redis环境配置" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
