@@ -15,6 +15,8 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,6 +38,7 @@ public class SetmealController {
 
 
     @PostMapping
+    @CacheEvict(value="setmealCache",allEntries = true)
     public R<String> save(@RequestBody SetmealDto setmealDto){
         setmealService.saveWithDish(setmealDto);
         return R.success("添加成功");
@@ -81,6 +84,7 @@ public class SetmealController {
         return R.success(dtoPage);
     }
     @DeleteMapping
+    @CacheEvict(value="setmealCache",allEntries = true)
     public R<String> delete(@RequestParam List<Long> ids){
         setmealService.removeWithDish(ids);
         return R.success("删除成功");
@@ -98,15 +102,17 @@ public class SetmealController {
         return R.success("修改成功");
     }
 
+    /*
+        根据条件查询套餐数据
+     */
     @GetMapping("/list")
-    public R<List<Setmeal>> list(String categoryId,int status){
+    @Cacheable(value="setmealCache",key = "#setmeal.categoryId+'_'+#setmeal.status")
+    public R<List<Setmeal>> list(Setmeal setmeal){
         LambdaQueryWrapper<Setmeal> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(categoryId != null,Setmeal::getCategoryId,categoryId);
-        wrapper.eq(Setmeal::getStatus,status);
+        wrapper.eq(setmeal.getCategoryId() != null,Setmeal::getCategoryId,setmeal.getCategoryId());
+        wrapper.eq(setmeal.getStatus() != null,Setmeal::getStatus,setmeal.getStatus());
         wrapper.orderByDesc(Setmeal::getUpdateTime);
         List<Setmeal> list = setmealService.list(wrapper);
         return R.success(list);
-
-
     }
 }
