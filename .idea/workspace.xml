@@ -4,16 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37dcb969-6730-4b65-9da1-df3925a8d3fd" name="变更" comment="Redis环境配置">
+    <list default="true" id="37dcb969-6730-4b65-9da1-df3925a8d3fd" name="变更" comment="使用springcache缓存菜品数据">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/common/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/common/R.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/controller/SetmealController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/controller/SetmealController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/controller/CommonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/controller/EmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/DishController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/DishController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aearn/takeout/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aearn/takeout/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/CommonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/CommonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/EmployeeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/SetmealController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/SetmealController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/takeout-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/takeout-1.0-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/test/MainTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +73,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;ToolWindow运行.ShowToolbar&quot;: &quot;false&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/code/takeout&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/code/rw_demo&quot;,
     &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -71,6 +81,9 @@
     &quot;spring.configuration.checksum&quot;: &quot;709667f94f75abd8e5ddf63e3630ce36&quot;
   }
 }</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\code\takeout\src\main\java\com\aearn\takeout\service\impl" />
@@ -113,6 +126,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.Application" />
+        <item itemvalue="应用程序.MainTest" />
         <item itemvalue="Spring Boot.Application" />
         <item itemvalue="应用程序.MainTest" />
       </list>
@@ -168,6 +183,10 @@
       <workItem from="1679924814359" duration="11441000" />
       <workItem from="1680425804206" duration="1208000" />
       <workItem from="1680508776840" duration="3969000" />
+      <workItem from="1680527652526" duration="619000" />
+      <workItem from="1680531206947" duration="2137000" />
+      <workItem from="1680664968042" duration="5992000" />
+      <workItem from="1680683764514" duration="2655000" />
     </task>
     <task id="LOCAL-00001" summary="takeout1.0">
       <created>1680008622007</created>

@@ -25,7 +25,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/common")
 public class CommonController {
-    @Value("${image.path}")
+    @Value("${takeout.path}")
     private String basePath;
     @PostMapping("/upload")
     public R<String> upload(MultipartFile file){
