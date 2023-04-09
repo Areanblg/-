@@ -4,26 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37dcb969-6730-4b65-9da1-df3925a8d3fd" name="变更" comment="使用springcache缓存菜品数据">
+    <list default="true" id="37dcb969-6730-4b65-9da1-df3925a8d3fd" name="变更" comment="1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/controller/CommonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/aearn/takeout/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aearn/takeout/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/CommonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/CommonController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/EmployeeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/SetmealController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aearn/takeout/controller/SetmealController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/takeout-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/takeout-1.0-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/test/MainTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/common/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/common/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/config/WebMvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/entity/Setmeal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/entity/Setmeal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aearn/takeout/filter/LoginCheckFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aearn/takeout/common/R.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aearn/takeout/common/R.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aearn/takeout/config/WebMvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aearn/takeout/config/WebMvcConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aearn/takeout/entity/Setmeal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aearn/takeout/entity/Setmeal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aearn/takeout/filter/LoginCheckFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aearn/takeout/filter/LoginCheckFilter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +30,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -73,11 +69,11 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;ToolWindow运行.ShowToolbar&quot;: &quot;false&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/code/rw_demo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/code/takeout/src/main/java/com/aearn/takeout/config&quot;,
     &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;709667f94f75abd8e5ddf63e3630ce36&quot;
   }
 }</component>
@@ -86,11 +82,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\takeout\src\main\java\com\aearn\takeout\config" />
       <recent name="D:\code\takeout\src\main\java\com\aearn\takeout\service\impl" />
       <recent name="D:\code\takeout\src\main\java\com\aearn\takeout\controller" />
       <recent name="D:\code\takeout\src\main\java\com\aearn\takeout\entity" />
       <recent name="D:\code\takeout\src\main\resources" />
-      <recent name="D:\code\takeout\src\main\resources\front" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\code\takeout\src\main\java\com\aearn\takeout\utils" />
@@ -126,10 +122,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.MainTest" />
+        <item itemvalue="Spring Boot.Application" />
         <item itemvalue="Spring Boot.Application" />
         <item itemvalue="应用程序.MainTest" />
         <item itemvalue="Spring Boot.Application" />
-        <item itemvalue="应用程序.MainTest" />
       </list>
     </recent_temporary>
   </component>
@@ -187,6 +184,9 @@
       <workItem from="1680531206947" duration="2137000" />
       <workItem from="1680664968042" duration="5992000" />
       <workItem from="1680683764514" duration="2655000" />
+      <workItem from="1680868915908" duration="1343000" />
+      <workItem from="1680935455670" duration="3000" />
+      <workItem from="1681005058363" duration="2047000" />
     </task>
     <task id="LOCAL-00001" summary="takeout1.0">
       <created>1680008622007</created>
