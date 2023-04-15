@@ -92,7 +92,7 @@ public class DishController {
     public R<String> update(@RequestBody DishDto dto){
         String key = "dish_"+dto.getCategoryId()+"_"+dto.getStatus();
         dishService.updateWithFlavor(dto);
-        Set keys = redisTemplate.keys("dish_*");
+        Set keys = redisTemplate.keys("dish_*"+key);
         redisTemplate.delete(keys);
         return R.success("修改成功");
     }
@@ -118,7 +118,7 @@ public class DishController {
     @GetMapping("/list")
     public R<List<DishDto>> list(Dish dish) {
         List<DishDto> dishDtoList = null;
-        String key = "dish_"+dish.getCategoryId()+"_"+dish.getStatus();
+        String key = "dish:"+dish.getCategoryId()+"_"+dish.getStatus();
         //先从缓存中获取数据，缓存中有，直接返回
 
         String str = redisTemplate.opsForValue().get(key);

@@ -75,9 +75,10 @@
                         const res = await loginApi(this.form)
                         this.loading = false
                         if(res.code === 1){
-                            sessionStorage.setItem("userPhone",this.form.phone)
+                            sessionStorage.setItem("token",res.code)
+                            console.log(res.data)
                             window.requestAnimationFrame(()=>{
-                                window.location.href= '/front/index.html'
+                                // window.location.href= '/front/index.html'
                             })                           
                         }else{
                             this.$notify({ type:'warning', message:res.msg});

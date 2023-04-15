@@ -55,8 +55,8 @@ public class CategoryController {
     @PutMapping
     public R<String> update(@RequestBody Category category){
         System.out.println("----------------category----------------"+category);
-        boolean b = categoryService.updateById(category);
-        if (b){
+        boolean ret = categoryService.updateById(category);
+        if (ret){
             return R.success("修改成功");
         }
         return R.error("修改失败");

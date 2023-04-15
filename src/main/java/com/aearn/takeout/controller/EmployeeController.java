@@ -13,8 +13,7 @@ import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.time.LocalDateTime;
+
 
 @Slf4j
 @RestController
@@ -45,7 +44,7 @@ public class EmployeeController {
             return R.error("账号已禁用");
         }
         //登录成功,将信息存在session中返回登录成功结果
-        request.getSession().setAttribute("employee",emp);
+        request.getSession().setAttribute("employee",emp.getId());
         return R.success(emp);
     }
 
@@ -71,8 +70,6 @@ public class EmployeeController {
     @GetMapping("/page")
     public R<Page> page(int page,int pageSize,String name){
 
-        System.out.println("page:---------------------"+page);
-        System.out.println("pageSize:---------------------"+pageSize);
         //构造分页构造器
         Page pageInfo = new Page(page,pageSize);
         //构造条件构造器
@@ -83,13 +80,12 @@ public class EmployeeController {
         //添加排序条件
         queryWrapper.orderByDesc(Employee::getUpdateTime);
         //执行查询
-        Page page1 = employeeService.page(pageInfo, queryWrapper);
-        return R.success(page1);
+        Page pages = employeeService.page(pageInfo, queryWrapper);
+        return R.success(pages);
     }
     @PutMapping
     public R<String> update(@RequestBody Employee employee,HttpServletRequest request){
         //根据id修改
-        Employee emp = (Employee)request.getSession().getAttribute("employee");
         employeeService.updateById(employee);
         return R.success("员工信息修改成功");
     }

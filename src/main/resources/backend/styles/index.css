@@ -18,7 +18,7 @@
 }
 .main-container {
   height: 100%;
-  background: #f3f4f7;
+  background: white;
   position: relative;
   width: calc(100% - 190px);
 }
@@ -93,7 +93,7 @@
   margin-left: 20px;
   width: 28px;
   font-size: 14px;
-  color: #ffc200;
+  color: #333333;
   cursor: pointer;
 }
 

@@ -29,8 +29,6 @@ public class SetmealController {
 
     @Autowired
     private SetmealService setmealService;
-    @Autowired
-    private SetmealDishService setmealDishService;
 
     @Autowired
     private CategoryService categoryService;

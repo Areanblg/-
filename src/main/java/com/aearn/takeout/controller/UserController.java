@@ -1,5 +1,6 @@
 package com.aearn.takeout.controller;
 
+import com.aearn.takeout.common.BaseContext;
 import com.aearn.takeout.common.R;
 import com.aearn.takeout.entity.User;
 import com.aearn.takeout.service.UserService;
@@ -39,52 +40,30 @@ public class UserController {
         //获取手机号
         String phone = user.getPhone();
         String code = ValidateCodeUtils.generateValidateCode4String(4);
-        log.info(code+"------------------------");
-        System.out.println(phone+"---------------------");
         if (StringUtils.isNotEmpty(phone)){
-            //生成一个四位的验证码
-            //把验证码发送到手机号短信上
-//            SMSUtils.sendMessage("aearn","SMS_274365085",phone,code);
-            //需要将生成的验证码保存到session
-//            session.setAttribute(phone,code);
-            /*将手机验证码保存到redis中*/
-            redisTemplate.opsForValue().set(phone,code,5, TimeUnit.MINUTES);
+            redisTemplate.opsForValue().set("login:code:"+phone,code,5, TimeUnit.MINUTES);
             return R.success("手机验证码短信发送成功");
 
         }
         return R.error("验证码发送失败");
     }
     @PostMapping("/login")
-    public R<User> login(@RequestBody Map map,HttpSession session){
+    public R<String> login(@RequestBody Map map,HttpServletRequest request){
         //获取手机号
         String phone = map.get("phone").toString();
         String code = map.get("code").toString();
-
-//        Object codeInSession = session.getAttribute(phone);
-        //从redis中获取手机验证码
-        Object codeInRedis = redisTemplate.opsForValue().get(phone);
-        if (codeInRedis != null && codeInRedis.equals(code)){
-            LambdaQueryWrapper<User> wrapper = new LambdaQueryWrapper<>();
-            wrapper.eq(User::getPhone,phone);
-            User user = userService.getOne(wrapper);
-            if (user == null){
-                user = new User();
-                user.setPhone(phone);
-                user.setStatus(1);
-                userService.save(user);
-            }
-            session.setAttribute("user",user.getId());
-            //如果用户登录成功，删除缓存验证码
-            redisTemplate.delete(phone);
-            return R.success(user);
-        }
-        return R.error("短信发送失败");
+        String token = request.getHeader("Authorization");
+        //你原本的逻辑是通过请求头的Authorization参数去作为一个token的Key的，但是这个参数在每个浏览器都是一样的，并不一致，所以没法去判断两个浏览器登录的是一个账号，understand?
+        //作为一个key值，必须确保每次登录产生的标识是一致的，所以是改成了以手机号通过jwt生成token去作为key，这个是不变的
+        return userService.login(phone,code);
     }
 
     @PostMapping("/loginout")
     public R<String> loginOut(HttpServletRequest request){
-        request.getSession().removeAttribute("user");
-        return R.success("退出成功");
+        String token = request.getHeader("Authorization");
+        redisTemplate.delete("login:token:"+token);
+        BaseContext.remove();
+        return R.success(token);
     }
 
 
