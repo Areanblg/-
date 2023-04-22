@@ -1,7 +1,9 @@
 package com.aearn.takeout.config;
 
 import com.aearn.takeout.common.JacksonObjectMapper;
+import com.aearn.takeout.interceptor.AdminLoginInterception;
 import com.aearn.takeout.interceptor.LoginInterception;
+import com.aearn.takeout.interceptor.UserLoginInterception;
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +33,35 @@ import java.util.List;
 @EnableKnife4j
 public class WebMvcConfig extends WebMvcConfigurationSupport{
 
+    private String[] ignoreLogin = new String[]{
+            "/employee/login",
+            "/front/**",
+            "/backend/**",
+            "/common/**",
+            "/user/sendMsg",
+            "/user/login",
+            "/doc.html",
+            "/webjars/**",
+            "/swagger-resources",
+            "/v2/api-docs"
+    };
+
+    /**
+     * 管理员登录的URL
+     */
+    private String[] adminLoginUrl = new String[]{
+            "/backend/**",
+            "/employee/**"
+    };
+
+    /**
+     * 用户登录拦截的URL
+     */
+    private String[] userLoginUrl = new String[]{
+            "/front/**"
+    };
+
+
     @Autowired
     private StringRedisTemplate redisTemplate;
 
@@ -46,21 +77,26 @@ public class WebMvcConfig extends WebMvcConfigurationSupport{
         registry.addResourceHandler("/backend/**").addResourceLocations("classpath:/backend/");
         registry.addResourceHandler("/front/**").addResourceLocations("classpath:/front/");
     }
+
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
+        /**
+         * 针对不同的情景，需要有不同的拦截器进行拦截
+         * 优先级1： 登录拦截器
+         * 优先级2： 用户登录拦截器、管理员登录拦截器
+         */
+        //登录拦截，优先级最高
         registry.addInterceptor(new LoginInterception(redisTemplate))
                 .addPathPatterns("/**")
-                .excludePathPatterns("/employee/login",
-                        "/employee/logout",
-                        "/backend/**",
-                        "/front/**",
-                        "/common/**",
-                        "/user/sendMsg",
-                        "/user/login",
-                        "/doc.html",
-                        "/webjars/**",
-                        "/swagger-resources",
-                        "/v2/api-docs");
+                .excludePathPatterns(ignoreLogin).order(1);
+//        管理员拦截，只拦截后台
+        registry.addInterceptor(new AdminLoginInterception())
+                .addPathPatterns(adminLoginUrl)
+                .excludePathPatterns(ignoreLogin).order(2);
+        //用户拦截
+        registry.addInterceptor(new UserLoginInterception(redisTemplate))
+                .addPathPatterns(userLoginUrl)
+                .excludePathPatterns(ignoreLogin).order(2);
     }
     /**
      * 扩展mvc框架的消息转换器

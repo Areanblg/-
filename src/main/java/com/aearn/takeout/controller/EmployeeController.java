@@ -1,11 +1,9 @@
 package com.aearn.takeout.controller;
 
-import com.aearn.takeout.common.BaseContext;
 import com.aearn.takeout.common.R;
 import com.aearn.takeout.entity.Employee;
 import com.aearn.takeout.service.EmployeeService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,9 +57,10 @@ public class EmployeeController {
     public R<String> save(@RequestBody Employee employee,HttpServletRequest request){
         //设置初始密码123456，需要进行MD5进行加密
         employee.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
-        Employee emp = (Employee)request.getSession().getAttribute("employee");
         employeeService.save(employee);
         return R.success("新增员工成功");
+
+
     }
 
     /*

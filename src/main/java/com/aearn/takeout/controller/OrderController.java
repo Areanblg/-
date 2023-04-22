@@ -42,7 +42,7 @@ public class OrderController {
      * 查询用户订单分页
      */
     @GetMapping("/page")
-    public R<Page> page(Integer page,Integer pageSize,Integer number){
+    public R<Page> page(Integer page,Integer pageSize,Long number){
         Page pageInfo = new Page(page,pageSize);
         //构造条件构造器
         LambdaQueryWrapper<Orders> queryWrapper = new LambdaQueryWrapper<>();

@@ -52,9 +52,6 @@ public class UserController {
         //获取手机号
         String phone = map.get("phone").toString();
         String code = map.get("code").toString();
-        String token = request.getHeader("Authorization");
-        //你原本的逻辑是通过请求头的Authorization参数去作为一个token的Key的，但是这个参数在每个浏览器都是一样的，并不一致，所以没法去判断两个浏览器登录的是一个账号，understand?
-        //作为一个key值，必须确保每次登录产生的标识是一致的，所以是改成了以手机号通过jwt生成token去作为key，这个是不变的
         return userService.login(phone,code);
     }
 

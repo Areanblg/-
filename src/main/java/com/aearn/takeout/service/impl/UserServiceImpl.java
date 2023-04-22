@@ -11,13 +11,11 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
 import java.util.Map;
-import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -54,6 +52,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         //2.1如果不存在，注册一个，保存到数据库
         User user = this.getOne(wrapper);
         if (user == null){
+            user = new User();
             user.setPhone(phone);
             user.setStatus(1);
             save(user);
@@ -75,7 +74,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         redisTemplate.opsForHash().putAll(tokenKey,userMap);
         //5.设置token有效期
         redisTemplate.expire(tokenKey,30, TimeUnit.MINUTES);
-
+        //设置session
+        httpSession.setAttribute("user", userMap);
         //5.返回Token
         return R.success(token);
     }
